@@ -9,4 +9,9 @@ export const citiesAPI = {
 		const { data } = await instance.get(`cities/?_page=${page}&_limit=5`)
 		return data
 	},
+
+	async getCity(cityId: string) {
+		const { data } = await instance.get(`/cities/${cityId}`)
+		return data
+	},
 }
