@@ -11,6 +11,7 @@ import {
 	TableRow,
 	Paper,
 } from "@material-ui/core"
+import { useHistory } from "react-router-dom"
 
 import { citiesAPI } from "./api/api"
 import "./Cities.css"
@@ -27,6 +28,8 @@ export const Cities = memo(function () {
 	const [cities, setCities] = useState<Array<CityType>>([])
 	const [page, setPage] = useState<number>(1)
 	const [disable, setDisable] = useState<boolean>(false)
+
+	const history = useHistory()
 
 	useEffect(() => {
 		;(async () => {
@@ -45,13 +48,21 @@ export const Cities = memo(function () {
 		setPage((page) => page + 1)
 	}
 
+	const addCity = () => {
+		history.push("/city", { mode: "create" })
+	}
+
+	const updateCity = (cityId: number) => {
+		history.push("/city/" + cityId, { mode: "update" })
+	}
+
 	return (
 		<div className="Cities">
 			<header className="Cities-header">
 				{cities.length > 0 && (
 					<Container>
 						<Box marginTop="1rem" />
-						<Button className="Button" variant="contained">
+						<Button onClick={addCity} className="Button" variant="contained">
 							Добавить город
 						</Button>
 						<Box marginTop="1rem" />
@@ -65,7 +76,7 @@ export const Cities = memo(function () {
 								<TableBody>
 									{cities.map((city) => (
 										<TableRow key={city.id}>
-											<TableCell component="th" scope="row">
+											<TableCell onClick={() => updateCity(city.id)} component="th" scope="row">
 												{city.nameRu}
 											</TableCell>
 										</TableRow>
