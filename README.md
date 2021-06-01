@@ -2,13 +2,11 @@
 
 simple application which shows cities, update and create new city
 
-## Used technologies:
+## Demonstration:
 
-- React (hooks)
-- Typescript
-- Material-Ui
-- axios
-- json-server
+---
+
+![Books app image](https://github.com/x4aekx/cities/raw/master/public/cities.gif)
 
 ## Start project
 
@@ -20,8 +18,10 @@ For run project:
 
 `yarn dev`
 
----
+## Used technologies:
 
-## Demonstration:
-
-![Books app image](https://github.com/x4aekx/cities/raw/master/public/cities.gif)
+- React (hooks)
+- Typescript
+- Material-Ui
+- axios
+- json-server
