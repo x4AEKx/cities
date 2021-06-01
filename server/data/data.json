@@ -4,8 +4,8 @@
       "id": 1,
       "nameRu": "Москва",
       "nameEn": "Moscow",
-      "fontSize": "160",
-      "color": "#F56F6F"
+      "fontSize": "130",
+      "color": "#FFC8EF"
     },
     {
       "id": 2,
@@ -92,11 +92,11 @@
       "color": "#CCCD9E"
     },
     {
-      "id": 14,
       "nameRu": "Долгопрудный",
       "nameEn": "Dolgoprudny",
-      "fontSize": "160",
-      "color": "#F56F6F"
+      "fontSize": "100",
+      "color": "#749BF8",
+      "id": 14
     }
   ]
 }
