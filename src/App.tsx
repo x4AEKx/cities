@@ -1,7 +1,8 @@
-import { memo } from "react"
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-import { Cities } from "./Cities"
-import { City } from "./City"
+import { memo } from "react"
+
+import { Cities } from "./components/Cities/Cities"
+import { City } from "./components/City/City"
 
 export const App = memo(function () {
 	return (

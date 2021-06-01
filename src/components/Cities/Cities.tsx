@@ -1,4 +1,5 @@
 import { useEffect, useState, memo } from "react"
+import { useHistory } from "react-router-dom"
 import {
 	Box,
 	Button,
@@ -11,18 +12,9 @@ import {
 	TableRow,
 	Paper,
 } from "@material-ui/core"
-import { useHistory } from "react-router-dom"
 
-import { citiesAPI } from "./api/api"
-import "./Cities.css"
-
-type CityType = {
-	id: number
-	nameRu: string
-	nameEn: string
-	fontSize: string
-	color: string
-}
+import { CityType } from "../../types/CityType"
+import { citiesAPI } from "../../api/api"
 
 export const Cities = memo(function () {
 	const [cities, setCities] = useState<Array<CityType>>([])
@@ -49,16 +41,16 @@ export const Cities = memo(function () {
 	}
 
 	const addCity = () => {
-		history.push("/city", { mode: "create" })
+		history.push("/city")
 	}
 
 	const updateCity = (cityId: number) => {
-		history.push("/city/" + cityId, { mode: "update" })
+		history.push("/city/" + cityId)
 	}
 
 	return (
 		<div className="Cities">
-			<header className="Cities-header">
+			<main className="Cities-main">
 				{cities.length > 0 && (
 					<Container>
 						<Box marginTop="1rem" />
@@ -91,7 +83,7 @@ export const Cities = memo(function () {
 						<Box marginTop="1rem" />
 					</Container>
 				)}
-			</header>
+			</main>
 		</div>
 	)
 })
